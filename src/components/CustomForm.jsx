@@ -1,4 +1,7 @@
-const CustomForm = ({ onSubmit, onInput, thing }) => {
+// library imports
+import { ArrowRightCircleIcon } from "@heroicons/react/24/solid";
+
+const CustomForm = ({ handleSubmit, handleInput, thing }) => {
   return (
     <>
       <h1 className="text-3xl md:text-5xl font-bold text-center">
