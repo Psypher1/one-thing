@@ -1,0 +1,14 @@
+import { CheckCircleIcon } from "@heroicons/react/24/solid";
+
+export default function CustomButton({ text, handleCompletedThing }) {
+  return (
+    <button
+      className="flex items-center space-x-3 bg-teal-600 dark:bg-teal-500 px-6 py-2 text-slate-200 focus:outline-none focus-visible:ring-4 ring-teal-600 dark:ring-teal-500 ring-offset-4 ring-offset-slate-200 dark:ring-offset-slate-800 hover:opacity-80 transition-opacity disabled:opacity-50 rounded-md"
+      autoFocus
+      onClick={handleCompletedThing}
+    >
+      <span className="pointer-events-none font-semibold">{text}</span>
+      <CheckCircleIcon className="pointer-events-none w-12 h-12" />
+    </button>
+  );
+}
