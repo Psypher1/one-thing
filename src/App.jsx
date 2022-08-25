@@ -26,6 +26,7 @@ function getSuccessMessage() {
 function App() {
   const [thing, setThing] = useState("");
   const [isCompleted, setIsCompleted] = useState(true);
+  const [numberOfThings, setNumberOfThings] = useState(0);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -42,6 +43,7 @@ function App() {
     await jsConfetti.addConfetti();
     event.target.removeAttribute("disabled");
     setThing("");
+    setNumberOfThings(numberOfThings + 1);
     setIsCompleted(true);
   };
 
@@ -58,6 +60,9 @@ function App() {
           <OneThing thing={thing} handleCompletedThing={handleCompletedThing} />
         )}
       </div>
+      <p className="text-lg font-semibold">
+        🚀 Things Completed: {numberOfThings}
+      </p>
     </main>
   );
 }
